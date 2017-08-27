@@ -3,10 +3,10 @@ const getStudent = require('../../main/getStudent');
 const showTranscript = require('../../main/showTranscript');
 
 describe('result', () => {
-    const student = `zsy,110,汉族,a班,数学:80,语文:100,英语:90`;
-    const student1 = `zsyy,1101,汉族,a班,数学:70,语文:80,英语:60`;
-    const student2 = `zsyyy,1102,汉族,a班,数学:70,语文:90,英语:80`;
-    const student3 = `zsyyyy,1103,汉族,a班,数学:70,语文:80,英语:90`;
+    const student = `zsy01,110,汉族,a班,数学:80,语文:100,英语:90`;
+    const student1 = `zsy02,1101,汉族,a班,数学:70,语文:80,英语:60`;
+    const student2 = `zsy03,1102,汉族,a班,数学:70,语文:90,英语:80`;
+    const student3 = `zsy04,1103,汉族,a班,数学:70,语文:80,英语:90`;
     var students = [];
 
     beforeEach(() => {
