@@ -34,7 +34,6 @@ function getScore(student, course) {
             return result.score;
         }
     }
-
     return 0;
 }
 function printStudentScores(students, courses) {

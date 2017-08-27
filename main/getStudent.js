@@ -16,6 +16,7 @@ function checkBasicInfo(str) {
     return true
 }
 
+
 function checkFormat(str) {
     return checkBasicInfo(str) && checkResultInfo(str);
 }

@@ -3,6 +3,7 @@ function calTotalScore(results) {
         return sum + result.score;
     }, 0.0)
 }
+
 function calAverageScore(results) {
     return calTotalScore(results) / results.length * 100 / 100;
 }
