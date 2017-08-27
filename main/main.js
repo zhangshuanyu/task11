@@ -1,8 +1,8 @@
-let getNumber = require('cli-interact').getNumber;
-let question = require('cli-interact').question;
+var getNumber = require('cli-interact').getNumber;
+var question = require('cli-interact').question;
 
-let getStudent = require('./getStudent');
-let showTranscript = require('./showTranscript');
+var getStudent = require('./getStudent');
+var showTranscript = require('./showTranscript');
 
 const addMessage = "请输入学生信息（格式：姓名, 学号, 班级, 学科: 成绩, ...），按回车提交：";
 const wrongStudentFormat = "请按正确的格式输入（格式：姓名, 学号, 班级, 学科: 成绩, ...）：";
@@ -21,12 +21,12 @@ function getMenu() {
 
 
 function main() {
-    let students = [];
+    var students = [];
 
     while (true) {
         switch (getNumber(getMenu())) {
             case 1:
-                let student = getStudent(question(addMessage));
+                var student = getStudent(question(addMessage));
                 while (student === -1) {
                     student = question(wrongStudentFormat);
                 }
@@ -34,8 +34,8 @@ function main() {
                 addSuccess(student);
                 break;
             case 2:
-                let noStr = question(transcriptMessage);
-                let transcript = showTranscript(students, noStr);
+                var noStr = question(transcriptMessage);
+                var transcript = showTranscript(students, noStr);
                 while (transcript === -1) {
                     student = question(wrongTranscriptFormat);
                 }

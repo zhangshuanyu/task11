@@ -1,13 +1,13 @@
-let Student = require('./Student');
+var Student = require('./Student');
 
 function checkResultInfo(str) {
     return str.split(",").length > 4;
 }
 
 function checkBasicInfo(str) {
-    let results = str.split(",").splice(4, str.split(",").length);
+    var results = str.split(",").splice(4, str.split(",").length);
 
-    for (let result of results) {
+    for (var result of results) {
         if (result.split(":").length !== 2) {
             return false;
         }
@@ -28,9 +28,9 @@ function getCourse(course) {
 }
 
 function getCourses(courses) {
-    let result = [];
+    var result = [];
 
-    for (let course of courses) {
+    for (var course of courses) {
         result.push(getCourse(course))
     }
 
@@ -38,15 +38,15 @@ function getCourses(courses) {
 }
 
 function formatStudent(str) {
-    let info = str.split(",");
-    let [name, no, nation,klazz] = info.splice(0, 4);
-    let courses = getCourses(info);
+    var info = str.split(",");
+    var [name, no, nation,klazz] = info.splice(0, 4);
+    var courses = getCourses(info);
 
     return new Student(name, no, nation, klazz,courses);
 }
 function getStudent(str) {
     if (checkFormat(str)) {
-        let student = formatStudent(str);
+        var student = formatStudent(str);
 
         return student;
     }

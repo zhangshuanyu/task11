@@ -1,8 +1,8 @@
 function checkNo(students, noStr) {
-    let result = [];
-    let noArr = noStr.split(",");
+    var result = [];
+    var noArr = noStr.split(",");
 
-    for (let student of students) {
+    for (var student of students) {
         if (noArr.includes(student.no)) {
             result.push(student.no);
         }
@@ -11,10 +11,10 @@ function checkNo(students, noStr) {
     return result;
 }
 function allCourse(students) {
-    let result = new Set();
+    var result = new Set();
 
-    for (let student of students) {
-        for (let course of student.results) {
+    for (var student of students) {
+        for (var course of student.results) {
             result.add(course.course);
         }
     }
@@ -27,9 +27,9 @@ function printTittle(courses) {
 }
 
 function getScore(student, course) {
-    let results = student.results;
+    var results = student.results;
 
-    for (let result of results) {
+    for (var result of results) {
         if (course === result.course) {
             return result.score;
         }
@@ -38,9 +38,9 @@ function getScore(student, course) {
     return 0;
 }
 function printStudentScores(students, courses) {
-    let result = [];
+    var result = [];
     students.map(student => {
-        let scores = [];
+        var scores = [];
         courses.map(course => {
             scores.push(getScore(student, course));
         });
@@ -53,10 +53,10 @@ function filterStudent(students, noArr) {
     return students.filter(student => noArr.includes(student.no));
 }
 function studentTranscript(students, noArr) {
-    let courses = allCourse(students);
-    let tittle = printTittle(courses);
+    var courses = allCourse(students);
+    var tittle = printTittle(courses);
     students = filterStudent(students, noArr);
-    let studentScore = printStudentScores(students, courses);
+    var studentScore = printStudentScores(students, courses);
     return tittle + `
 ========================
 ${studentScore}
@@ -68,8 +68,8 @@ function getMedian(result) {
         : result[Math.floor(result.length / 2)];
 }
 function median(students) {
-    let result = [];
-    for (let student of students) {
+    var result = [];
+    for (var student of students) {
         result.push(student.totalScore);
     }
 
@@ -77,7 +77,7 @@ function median(students) {
 }
 
 function average(students) {
-    let totalScore = students.reduce((sum, student) => sum + student.totalScore, 0);
+    var totalScore = students.reduce((sum, student) => sum + student.totalScore, 0);
 
     return totalScore / students.length;
 }
@@ -93,12 +93,12 @@ function join(studentTranscript, statisticsTranscript) {
 }
 
 function showTranscript(students, noStr) {
-    let noArr = checkNo(students, noStr);
+    var noArr = checkNo(students, noStr);
     if (noArr.length === 0) return -1;
 
-    let stuTranscript = studentTranscript(students, noArr);
-    let statisticsTranscript = statistics(students);
-    let transcript = join(stuTranscript, statisticsTranscript);
+    var stuTranscript = studentTranscript(students, noArr);
+    var statisticsTranscript = statistics(students);
+    var transcript = join(stuTranscript, statisticsTranscript);
 
     return transcript;
 }
